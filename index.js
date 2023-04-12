@@ -15,12 +15,23 @@ const shoppingListEl = document.querySelector('#shopping-list');
 
 
 addButtonEl.addEventListener('click', () => {
+    addItemsToShoppingList();
+});
+
+inputFieldEl.addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      addItemsToShoppingList();
+    }
+});
+
+function addItemsToShoppingList() {
     const inputValue = inputFieldEl.value;
     if (!inputValue) return;
-    
+
     push(shoppingListDB, inputValue);  
     clearInputFieldEl();
-});
+}
 
 
 // Connect to DB and get data
