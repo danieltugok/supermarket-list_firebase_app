@@ -15,9 +15,11 @@ const shoppingListEl = document.querySelector('#shopping-list');
 
 
 addButtonEl.addEventListener('click', () => {
-  const inputValue = inputFieldEl.value;
-  push(shoppingListDB, inputValue);  
-  clearInputFieldEl();
+    const inputValue = inputFieldEl.value;
+    if (!inputValue) return;
+    
+    push(shoppingListDB, inputValue);  
+    clearInputFieldEl();
 });
 
 
