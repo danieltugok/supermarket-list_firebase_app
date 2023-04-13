@@ -85,6 +85,43 @@ shoppingListEl.addEventListener('click', (e) => {
 
 
 //  drag and drop
+// const cards = document.querySelectorAll('.card');
+// const dropZone = document.querySelector('#drop-zone');
+
+// cards.forEach((card) => {
+//     card.addEventListener('dragstart', (e) => {
+//         setTimeout(() => card.classList.add("dragging"), 0);
+//         console.log(e);
+//     });
+
+//     card.addEventListener("dragend", () => card.classList.remove("dragging"));   
+// });
+
+// dropZone.addEventListener('dragover', (e) => {
+//     e.preventDefault();
+// });
+
+// dropZone.addEventListener('drop', (e) => {
+//     const draggingItem = document.querySelector('.dragging');
+
+//     console.log('>>> ', draggingItem);
+//     dropZone.prepend(draggingItem);
+// });
+
+// const list = document.querySelector('.list');
+
+
+// list.addEventListener('dragover', (e) => {
+//     e.preventDefault();
+// });
+// list.addEventListener('drop', (e) => {
+//     const draggingItem = document.querySelector('.dragging');
+
+//     console.log('body >>> ', draggingItem);
+//     list.prepend(draggingItem);
+// });
+
+
 const cards = document.querySelectorAll('.card');
 const dropZone = document.querySelector('#drop-zone');
 
@@ -93,8 +130,13 @@ cards.forEach((card) => {
         setTimeout(() => card.classList.add("dragging"), 0);
         console.log(e);
     });
+    card.addEventListener('touchstart', (e) => {
+        setTimeout(() => card.classList.add("dragging"), 0);
+        console.log(e);
+    });
 
     card.addEventListener("dragend", () => card.classList.remove("dragging"));   
+    card.addEventListener("touchend", () => card.classList.remove("dragging"));   
 });
 
 dropZone.addEventListener('dragover', (e) => {
@@ -102,6 +144,12 @@ dropZone.addEventListener('dragover', (e) => {
 });
 
 dropZone.addEventListener('drop', (e) => {
+    const draggingItem = document.querySelector('.dragging');
+
+    console.log('>>> ', draggingItem);
+    dropZone.prepend(draggingItem);
+});
+dropZone.addEventListener('touchleave', (e) => {
     const draggingItem = document.querySelector('.dragging');
 
     console.log('>>> ', draggingItem);
@@ -115,6 +163,12 @@ list.addEventListener('dragover', (e) => {
     e.preventDefault();
 });
 list.addEventListener('drop', (e) => {
+    const draggingItem = document.querySelector('.dragging');
+
+    console.log('body >>> ', draggingItem);
+    list.prepend(draggingItem);
+});
+list.addEventListener('touchleave', (e) => {
     const draggingItem = document.querySelector('.dragging');
 
     console.log('body >>> ', draggingItem);

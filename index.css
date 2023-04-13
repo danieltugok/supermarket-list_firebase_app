@@ -103,6 +103,10 @@ ul#shopping-list li:hover{
     background-color: #DCE1EB;
 }
 
+.dragging{
+    background-color: red;
+}
+
 
 
 .sortable-list {
