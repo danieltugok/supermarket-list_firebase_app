@@ -85,6 +85,36 @@ shoppingListEl.addEventListener('click', (e) => {
 
 
 
+const categoriesNames = [
+    'Fruits',
+    'Vegetables',
+    'Meat',
+    'Fish',
+    'Dairy',
+    'Bakery',
+    'Drinks',
+    'Snacks',
+    'Other'
+]
+
+const categoryList = document.querySelector("#categories-list");
+let selectedCategory = null;
+
+categoriesNames.forEach((category) => {
+    const newCategory = document.createElement("li");
+    newCategory.textContent = category;
+    categoryList.appendChild(newCategory);
+
+    newCategory.addEventListener('click', (e) => {
+        let selectedItem = [...categoryList.querySelectorAll("li.selected")]
+        if (selectedItem.length > 0) selectedItem[0].classList.remove("selected");
+        e.target.classList.add("selected");
+        selectedCategory = e.target.textContent;
+        console.log("🚀 ~ file: index.js:113 ~ newCategory.addEventListener ~ selectedCategory:", selectedCategory)
+    });
+});
+
+
 // MODAL
 
 // Show Modal

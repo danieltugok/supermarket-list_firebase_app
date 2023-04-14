@@ -110,6 +110,56 @@ ul#shopping-list li:hover{
 
 
 
+
+
+/* CATEGORIES */
+ul#categories-list{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+}
+
+ul#categories-list li{    
+    font-size: 20px;
+    /* background-color: #FFFDF8; */
+    padding: 15px;
+    border-radius: 8px;
+    flex-grow: 1;
+    text-align: center;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+
+    /* background-color: dimgrey; */
+    background-color: #9e9999;
+    color: linen;
+}
+
+ul#categories-list li.selected{    
+    /* color: #FDFDFD; */
+    background-color: #32BEA6;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ul#categories-list li.selected:before {
+    content: "";
+    display: block;
+    background: url("./assets/img/check.png") no-repeat;
+    width: 16px;
+    height: 16px;
+    float: left;
+    margin: 0 6px 0 0;
+} */
+
+ul#categories-list li:hover{
+    cursor: pointer;
+    /* background-color: #FFECC7; */
+}
+
 /* MODAL */
 
 #modal-overlay {
@@ -137,4 +187,7 @@ ul#shopping-list li:hover{
   
   #modal-overlay #modal .modal-footer {
     margin-top: auto;
+    display: flex;
+    justify-content: flex-end;
+
   }
