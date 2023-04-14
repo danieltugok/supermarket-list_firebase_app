@@ -108,18 +108,33 @@ shoppingListEl.addEventListener('click', (e) => {
     }
 });
 
-
-
+// CATEGORIES
 const categoriesNames = [
-    'Fruits',
-    'Vegetables',
-    'Meat',
-    'Fish',
     'Dairy',
-    'Bakery',
-    'Drinks',
+    'Higiene',
+    'Cleaning',
+    'Disposables',
+    'Breakfast',
     'Snacks',
-    'Other'
+    'Meat',
+    'Frozen',
+    'Desserts',
+    'Health',
+    'Fitness',
+    'Eletronics',
+    'Outdoors',
+    'Baby',
+    'Clothing',
+    'Toys',
+    'Office/School',
+    'Organization',
+    'Furniture',
+    'Decor',
+    'Pet',
+    'Home Improvement',
+    'Seasonal',
+    'Gardening',
+    'Others'
 ]
 
 const categoryList = document.querySelector("#categories-list");
@@ -137,7 +152,7 @@ categoriesNames.forEach((category) => {
         e.target.classList.add("selected");
         selectedCategory = e.target.textContent;
         selectedCategorySpan.textContent = e.target.textContent;
-        console.log("🚀 ~ file: index.js:113 ~ newCategory.addEventListener ~ selectedCategory:", selectedCategory)
+        hideModalWindow();
     });
 });
 
