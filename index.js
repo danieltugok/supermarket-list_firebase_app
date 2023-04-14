@@ -10,13 +10,13 @@ const database = getDatabase(app);
 const shoppingListDB = ref(database, 'shoppingList');
 
 const inputFieldEl = document.querySelector('#input-field');
-const addButtonEl = document.querySelector('#add-button');
+// const addButtonEl = document.querySelector('#add-button');
 const shoppingListEl = document.querySelector('#shopping-list');
 
 
-addButtonEl.addEventListener('click', () => {
-    addItemsToShoppingList();
-});
+// addButtonEl.addEventListener('click', () => {
+//     addItemsToShoppingList();
+// });
 
 inputFieldEl.addEventListener("keypress", (event) => {
     if (event.key === "Enter") {
@@ -83,3 +83,33 @@ shoppingListEl.addEventListener('click', (e) => {
     }
 });
 
+
+
+// MODAL
+
+// Show Modal
+const addCategoryModal = document.querySelector("#add-category");
+const modalWindowOverlay = document.getElementById("modal-overlay");
+
+const showModalWindow = () => {
+  modalWindowOverlay.style.display = 'flex';
+}
+addCategoryModal.addEventListener("click", showModalWindow);
+
+// Hide Modal
+const closeModalButton = document.getElementById("close-modal");
+
+const hideModalWindow = () => {
+    modalWindowOverlay.style.display = 'none';
+}
+
+closeModalButton.addEventListener("click", hideModalWindow);
+
+// Hide On Blur
+const hideModalWindowOnBlur = (e) => {
+    if(e.target === e.currentTarget) {
+        hideModalWindow();
+    }
+}
+
+modalWindowOverlay.addEventListener("click", hideModalWindowOnBlur)

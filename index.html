@@ -17,17 +17,39 @@
     <link rel="manifest" href="/site.webmanifest">
 
 </head>
-<body>
+<body>    
+
     <div class="container">
         <img src="assets/img/supermkt.png" alt="Supermarket">
         <div class="input">
             <input type="text" id="input-field" placeholder="Bread">
-            <button id="add-button">+</button>
+            <!-- <button id="add-button">+</button> -->
+            <button id="add-category">+</button>
         </div>
 
         <ul id="shopping-list">
         </ul>      
 
+    </div>
+
+    <div id="modal-overlay">
+        <div id="modal">
+            <div class="modal-header">
+                <h2>Category</h2>
+            </div>
+            <div class="modal-content">
+                <ul id="shopping-list">
+                    <li>dfsdf</li>
+                    <li>dfsdf</li>
+                    <li>dfsdf</li>
+                    <li>dfsdf</li>
+                </ul> 
+            </div>
+            <div class="modal-footer">
+                <button id="close-modal">Close</button>
+                <button>Save</button>
+            </div>
+        </div>
     </div>
 
     <script src="index.js" type="module"></script>
