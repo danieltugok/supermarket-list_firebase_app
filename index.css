@@ -193,6 +193,11 @@ ul#categories-list li:hover{
     flex-direction: column;
     padding:10px;
   }
+
+  .modal-header h2{
+    text-align: center;
+  }
+
   
   #modal-overlay #modal .modal-footer {
     margin-top: auto;

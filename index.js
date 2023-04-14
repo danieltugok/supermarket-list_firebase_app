@@ -134,6 +134,15 @@ const categoriesNames = [
     'Home Improvement',
     'Seasonal',
     'Gardening',
+    'Home Improvement',
+    'Seasonal',
+    'Gardening',
+    'Home Improvement',
+    'Seasonal',
+    'Gardening',
+    'Home Improvement',
+    'Seasonal',
+    'Gardening',
     'Others'
 ]
 
@@ -164,18 +173,22 @@ const addCategoryModal = document.querySelector("#add-category");
 const modalWindowOverlay = document.getElementById("modal-overlay");
 
 const showModalWindow = () => {
-  modalWindowOverlay.style.display = 'flex';
+    modalWindowOverlay.style.display = 'flex';
+    
+    const modal = document.getElementById("modal");
+    let height = modal.offsetHeight;
+    modalWindowOverlay.style.height = height;
 }
 addCategoryModal.addEventListener("click", showModalWindow);
 
 // Hide Modal
-const closeModalButton = document.getElementById("close-modal");
+// const closeModalButton = document.getElementById("close-modal");
 
 const hideModalWindow = () => {
     modalWindowOverlay.style.display = 'none';
 }
 
-closeModalButton.addEventListener("click", hideModalWindow);
+// closeModalButton.addEventListener("click", hideModalWindow);
 
 // Hide On Blur
 const hideModalWindowOnBlur = (e) => {
