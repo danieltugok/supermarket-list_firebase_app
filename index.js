@@ -181,14 +181,12 @@ const showModalWindow = () => {
 }
 addCategoryModal.addEventListener("click", showModalWindow);
 
-// Hide Modal
-// const closeModalButton = document.getElementById("close-modal");
-
 const hideModalWindow = () => {
     modalWindowOverlay.style.display = 'none';
 }
 
-// closeModalButton.addEventListener("click", hideModalWindow);
+const closeModalButton = document.getElementById("close-modal");
+closeModalButton.addEventListener("click", hideModalWindow);
 
 // Hide On Blur
 const hideModalWindowOnBlur = (e) => {

@@ -194,8 +194,22 @@ ul#categories-list li:hover{
     padding:10px;
   }
 
+  .modal-header {
+    position: relative;
+  }
+
   .modal-header h2{
     text-align: center;
+  }
+
+  .modal-header button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0;
+    background: none;
+    font-size: 20px;
+    color: #432000;
   }
 
   
