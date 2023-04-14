@@ -182,10 +182,11 @@ ul#categories-list li:hover{
     justify-content: center;
   }
   #modal-overlay #modal {
+    overlay: scroll;
     max-width: 320px;
     width: 100%;
     background: white;
-    height: 900px;
+    /* height: 1200px; */
     border-radius: 10px 10px 0 0;
   
     display: flex;
