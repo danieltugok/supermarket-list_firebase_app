@@ -134,15 +134,6 @@ const categoriesNames = [
     'Home Improvement',
     'Seasonal',
     'Gardening',
-    'Home Improvement',
-    'Seasonal',
-    'Gardening',
-    'Home Improvement',
-    'Seasonal',
-    'Gardening',
-    'Home Improvement',
-    'Seasonal',
-    'Gardening',
     'Others'
 ]
 
