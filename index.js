@@ -29,7 +29,7 @@ function addItemsToShoppingList() {
     const inputValue = inputFieldEl.value;
     if (!inputValue) return;
 
-    push(shoppingListDB, {name: inputValue, read: false });  
+    push(shoppingListDB, {name: inputValue, read: false, category: selectedCategory });  
     clearInputFieldEl();
 }
 
@@ -43,11 +43,36 @@ onValue(shoppingListDB, (snapshot) => {
     console.log("🚀 ~ file: index.js:45 ~ onValue ~ snapshot.val():", snapshot.val())
 
     let itemsArray = Object.entries(snapshot.val());
-    clearshoppingListEl();    
-    for (let i = 0; i < itemsArray.length; i++) {
-        let currentItem = itemsArray[i];
-        appendItemToShoppingListEl(currentItem);    
-    }    
+    let sortedItemsArray = itemsArray.sort((a, b) => {
+        if (a[1].category === b[1].category){
+            return a[1].name < b[1].name ? -1 : 1
+          } else {
+            return a[1].category < b[1].category ? -1 : 1
+          }
+    });
+
+    let existingCategories = [...new Set(sortedItemsArray.map((item) => item[1].category))];
+
+    clearshoppingListEl();  
+
+    for (let i = 0; i < existingCategories.length; i++) {
+        const category = existingCategories[i];       
+        console.log("🚀 ~ file: index.js:60 ~ onValue ~ element:", category)     
+        
+        let newEl = document.createElement('div');
+        newEl.className = "title";
+        newEl.textContent = category || "No category";
+        shoppingListEl.appendChild(newEl);
+
+        itemsArray.filter((item) => item[1].category === category).forEach((item) => {
+            appendItemToShoppingListEl(item); 
+        });       
+    }  
+
+    // for (let i = 0; i < itemsArray.length; i++) {
+    //     let currentItem = itemsArray[i];
+    //     appendItemToShoppingListEl(currentItem);    
+    // }    
 })
 
 function clearshoppingListEl() {
@@ -98,6 +123,7 @@ const categoriesNames = [
 ]
 
 const categoryList = document.querySelector("#categories-list");
+let selectedCategorySpan = document.querySelector("#selected-category");
 let selectedCategory = null;
 
 categoriesNames.forEach((category) => {
@@ -110,6 +136,7 @@ categoriesNames.forEach((category) => {
         if (selectedItem.length > 0) selectedItem[0].classList.remove("selected");
         e.target.classList.add("selected");
         selectedCategory = e.target.textContent;
+        selectedCategorySpan.textContent = e.target.textContent;
         console.log("🚀 ~ file: index.js:113 ~ newCategory.addEventListener ~ selectedCategory:", selectedCategory)
     });
 });
